@@ -6,9 +6,9 @@ class Projectile;
 class Weapon
 {
 public:
-    void shootAt(Unit &u)
+    void shootAt(Unit *u)
     {
-        u.takeHit(get_projectile());
+        u->takeHit(get_projectile());
     }
 
 private:
