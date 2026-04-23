@@ -1,6 +1,6 @@
 #include "revolver.hpp"
 
-Revolver::Revolver() : projectile(0) //initialiserer projektilet i constructor
+Revolver::Revolver() : projectile(1) //initialiserer projektilet i constructor
 {
 }
 
