@@ -23,6 +23,25 @@ void Soldier::shootAt(Unit &unit)
 
 }
 
-void Soldier::takeHit(Projectile &projectile)
+//Funktionen skal sørge for, at soldaten kan give besked til observatørerne, når han bliver ramt
+void Soldier::takeHit(Projectile &projectile) 
 {
+    //Opretter en stringstream til at bygge beskeden
+    std::stringstream ss;
+
+    //Henter navnet fra Soldier og skaden fra projektilet
+    ss << this->name << " got hit for " << projectile.getDamage() << " damage";
+    
+    //Pakker beskeden ind i et UnitEvent objekt
+    UnitEvent event;
+    event.message = ss.str();
+
+    //Notificerer alle observatører via Subject-interface
+    this->notify(event);
+
+    /**
+     * Metoden beregner ikke selv skaden, men sender en besked ud til alle observatører.
+     * Ved at kalde notify() sikrer vi, at Soldier ikke behøver at vide, hvem der lytter (løs-kobling)
+    */
+
 }
