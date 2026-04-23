@@ -1,6 +1,6 @@
 // TODO implement composite pattern allowing multiple
 // soldiers to be selected and treated as one
-#pragma once;
+#pragma once
 #include <vector>
 #include "unit.hpp"
 #include "soldier.hpp"

@@ -1,6 +1,5 @@
 #include "soldier.hpp"
 #include "weapon.hpp"
-
 #include <sstream>
 
 Soldier::Soldier(std::string name, Weapon *weapon) : weapon(weapon), name(name)
@@ -30,7 +29,7 @@ void Soldier::takeHit(Projectile &projectile)
     std::stringstream ss;
 
     //Henter navnet fra Soldier og skaden fra projektilet
-    ss << this->name << " got hit for " << projectile.getDamage() << " damage";
+    ss << this->name << " got hit for " << projectile.damage << " damage";
     
     //Pakker beskeden ind i et UnitEvent objekt
     UnitEvent event;
